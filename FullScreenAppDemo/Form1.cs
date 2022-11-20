@@ -68,5 +68,10 @@ namespace FullScreenAppDemo
         {
             this.Dispose();
         }
+
+        private void guna2Button2_MouseHover(object sender, EventArgs e)
+        {
+
+        }
     }
 }
