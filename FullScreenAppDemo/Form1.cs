@@ -83,5 +83,22 @@ namespace FullScreenAppDemo
         {
 
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.panel5.Hide();
+        }
+
+      
     }
 }
