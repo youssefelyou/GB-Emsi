@@ -123,9 +123,6 @@
     <Reference Include="Plugin.Glypher, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Plugin.Glypher.1.1.0\lib\netstandard2.0\Plugin.Glypher.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Glypher.FontAwesome5Free, Version=5.11.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Plugin.Glypher.FontAwesome5Free.5.11.2\lib\netstandard2.0\Plugin.Glypher.FontAwesome5Free.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
