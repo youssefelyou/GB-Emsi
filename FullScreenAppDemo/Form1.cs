@@ -37,6 +37,12 @@ namespace FullScreenAppDemo
 
         }
 
+        private void Guna2Button8_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+
+        }
+
         private void Guna2Button9_Click(object sender, EventArgs e)
         {
             this.Dispose();
