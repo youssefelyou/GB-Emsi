@@ -41,7 +41,6 @@
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -116,7 +115,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(60, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 17);
+            this.label3.Size = new System.Drawing.Size(225, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Satisfy the thirst of knowledge";
             // 
@@ -127,7 +126,7 @@
             this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(618, 19);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(184, 16);
+            this.label18.Size = new System.Drawing.Size(232, 19);
             this.label18.TabIndex = 2;
             this.label18.Text = "Welcome to Twengo library";
             // 
@@ -137,7 +136,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(60, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(73, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Twengo";
             // 
@@ -266,7 +265,6 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.guna2CirclePictureBox1);
-            this.panel4.Controls.Add(this.label19);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -287,25 +285,16 @@
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(28, 100);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(109, 17);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "67.8K Subscribers";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(35, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 16);
+            this.label1.Size = new System.Drawing.Size(127, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "SaLaaR HuSyN";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // guna2Button4
             // 
@@ -429,6 +418,7 @@
             this.guna2Button1.Text = "Dashboard";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.TextOffset = new System.Drawing.Point(25, 0);
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // panel3
             // 
@@ -442,6 +432,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1120, 239);
             this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label5
             // 
@@ -449,7 +440,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(25, 47);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 17);
+            this.label5.Size = new System.Drawing.Size(96, 20);
             this.label5.TabIndex = 2;
             this.label5.Text = "Last 28 Days";
             // 
@@ -476,7 +467,7 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(17, 57);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 36);
+            this.label12.Size = new System.Drawing.Size(94, 44);
             this.label12.TabIndex = 0;
             this.label12.Text = "1.5K";
             // 
@@ -488,7 +479,7 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(16, 104);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(131, 17);
+            this.label13.Size = new System.Drawing.Size(172, 21);
             this.label13.TabIndex = 0;
             this.label13.Text = "10% Less than Usual";
             // 
@@ -511,7 +502,7 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(18, 20);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(73, 18);
+            this.label14.Size = new System.Drawing.Size(93, 23);
             this.label14.TabIndex = 0;
             this.label14.Text = "Emprunts";
             // 
@@ -521,7 +512,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(24, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 16);
+            this.label4.Size = new System.Drawing.Size(160, 19);
             this.label4.TabIndex = 2;
             this.label4.Text = "Channel Summary";
             // 
@@ -548,7 +539,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(17, 57);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 36);
+            this.label9.Size = new System.Drawing.Size(94, 44);
             this.label9.TabIndex = 0;
             this.label9.Text = "5.7K";
             // 
@@ -560,7 +551,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(16, 104);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(124, 17);
+            this.label10.Size = new System.Drawing.Size(163, 21);
             this.label10.TabIndex = 0;
             this.label10.Text = "3% Less than Usual";
             // 
@@ -583,7 +574,7 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(18, 20);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 18);
+            this.label11.Size = new System.Drawing.Size(72, 23);
             this.label11.TabIndex = 0;
             this.label11.Text = "Clients";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -611,7 +602,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(17, 57);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 36);
+            this.label7.Size = new System.Drawing.Size(82, 44);
             this.label7.TabIndex = 0;
             this.label7.Text = "100";
             // 
@@ -623,7 +614,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(16, 104);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 17);
+            this.label8.Size = new System.Drawing.Size(104, 21);
             this.label8.TabIndex = 0;
             this.label8.Text = "87 en stock";
             // 
@@ -646,7 +637,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(18, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 18);
+            this.label6.Size = new System.Drawing.Size(100, 23);
             this.label6.TabIndex = 0;
             this.label6.Text = "Ouvrages";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -689,7 +680,7 @@
             this.label20.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(19, 16);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(127, 16);
+            this.label20.Size = new System.Drawing.Size(158, 19);
             this.label20.TabIndex = 2;
             this.label20.Text = "Channel Analytics";
             // 
@@ -699,7 +690,7 @@
             this.label21.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(24, 36);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(177, 17);
+            this.label21.Size = new System.Drawing.Size(216, 20);
             this.label21.TabIndex = 2;
             this.label21.Text = "Lorem Ipsum is a dummy text";
             // 
@@ -730,7 +721,7 @@
             this.label24.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(9, 359);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(173, 17);
+            this.label24.Size = new System.Drawing.Size(219, 20);
             this.label24.TabIndex = 5;
             this.label24.Text = "Powered By C# Ui Academy";
             // 
@@ -740,7 +731,7 @@
             this.label22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(10, 41);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(139, 16);
+            this.label22.Size = new System.Drawing.Size(174, 19);
             this.label22.TabIndex = 3;
             this.label22.Text = "Channel Description";
             // 
@@ -750,7 +741,7 @@
             this.label23.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(15, 61);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(241, 34);
+            this.label23.Size = new System.Drawing.Size(298, 40);
             this.label23.TabIndex = 4;
             this.label23.Text = "Lorem Ipsum is a dummy text which can\r\nbe used as a placeholder";
             // 
@@ -843,7 +834,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel8;

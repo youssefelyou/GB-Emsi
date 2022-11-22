@@ -15,6 +15,7 @@ namespace FullScreenAppDemo
 {
     public partial class Form1 : Form
     {
+        public string admin;
         public Form1()
         {
             InitializeComponent();
@@ -57,6 +58,8 @@ namespace FullScreenAppDemo
                     PointGeometrySize = 15
                 }
             };
+
+            this.label1.Text = "Bonjour admin " ;// TODO
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
@@ -80,6 +83,21 @@ namespace FullScreenAppDemo
         }
 
         private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
