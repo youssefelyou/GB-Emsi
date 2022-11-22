@@ -8,13 +8,14 @@ namespace FullScreenAppDemo.Classes
 {
     internal class Emprunt
     {
+        private int id;
         private DateTime dateemprunt; 
         private DateTime daterendre;
         private Ouvrage ouvrage;
         private Client client;
         private bool retour;
 
-        public Emprunt(DateTime dateemprunt, DateTime daterendre, Ouvrage ouvrage, bool retour, Client client)
+        public Emprunt(int id,DateTime dateemprunt, DateTime daterendre, Ouvrage ouvrage, bool retour, Client client)
         {
             this.Dateemprunt = dateemprunt;
             this.Daterendre = daterendre;
