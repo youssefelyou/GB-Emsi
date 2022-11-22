@@ -68,6 +68,16 @@ namespace FullScreenAppDemo
             this.guna2Button1.BackColor = Color.AliceBlue;
             this.dashboard1.Show();
             this.clientList1.Hide();
+            this.ouvrage1.Hide();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            this.guna2Button3.BackColor = Color.LightSkyBlue;
+            this.dashboard1.Hide();
+            this.clientList1.Hide();
+            this.ouvrage1.Show();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -99,5 +109,7 @@ namespace FullScreenAppDemo
         {
 
         }
+
+      
     }
 }
