@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace FullScreenAppDemo
 {
-    public partial class Ouvrage : Form
+    public partial class Ouvrage : UserControl
     {
         public Ouvrage()
         {
             InitializeComponent();
+        }
+
+        private void newOuvrageButton_Click(object sender, EventArgs e)
+        {
+            Client client = new Client();
+            client.ShowDialog();
         }
     }
 }

@@ -49,6 +49,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dashboard1 = new FullScreenAppDemo.Dashboard();
             this.clientList1 = new FullScreenAppDemo.ClientList();
+            this.ouvrage1 = new FullScreenAppDemo.Ouvrage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -282,7 +283,7 @@
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button4.ImageOffset = new System.Drawing.Point(5, 0);
             this.guna2Button4.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button4.Location = new System.Drawing.Point(1, 302);
+            this.guna2Button4.Location = new System.Drawing.Point(0, 342);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
             this.guna2Button4.Size = new System.Drawing.Size(177, 45);
@@ -321,6 +322,7 @@
             this.guna2Button3.Text = "Ouvrages";
             this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.TextOffset = new System.Drawing.Point(15, 0);
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button2
             // 
@@ -387,6 +389,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.ouvrage1);
             this.panel3.Controls.Add(this.dashboard1);
             this.panel3.Controls.Add(this.clientList1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -397,9 +400,10 @@
             // 
             // dashboard1
             // 
+            this.dashboard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(226)))), ((int)(((byte)(230)))));
             this.dashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboard1.Location = new System.Drawing.Point(0, 0);
-            this.dashboard1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.dashboard1.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.dashboard1.Name = "dashboard1";
             this.dashboard1.Size = new System.Drawing.Size(1120, 668);
             this.dashboard1.TabIndex = 1;
@@ -408,14 +412,25 @@
             // 
             this.clientList1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientList1.Location = new System.Drawing.Point(0, 0);
-            this.clientList1.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.clientList1.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.clientList1.Name = "clientList1";
             this.clientList1.Size = new System.Drawing.Size(1120, 668);
             this.clientList1.TabIndex = 0;
             // 
+            // ouvrage1
+            // 
+            this.ouvrage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(226)))), ((int)(((byte)(230)))));
+            this.ouvrage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ouvrage1.Location = new System.Drawing.Point(0, 0);
+            this.ouvrage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ouvrage1.Name = "ouvrage1";
+            this.ouvrage1.Size = new System.Drawing.Size(1120, 668);
+            this.ouvrage1.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1300, 720);
             this.Controls.Add(this.panel3);
@@ -462,5 +477,6 @@
         private System.Windows.Forms.Panel panel3;
         private ClientList clientList1;
         private Dashboard dashboard1;
+        private Ouvrage ouvrage1;
     }
 }

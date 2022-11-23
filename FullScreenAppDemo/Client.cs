@@ -16,5 +16,10 @@ namespace FullScreenAppDemo
         {
             InitializeComponent();
         }
+
+        private void chercherOuvrage_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
