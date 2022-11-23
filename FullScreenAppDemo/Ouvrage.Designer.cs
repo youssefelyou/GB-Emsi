@@ -28,24 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("1");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ouvrage));
             this.guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
-            this.tableOuvrage = new System.Windows.Forms.ListView();
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.nomcomplet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.active = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.action = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listOfOuvrage = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.auteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editeur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodicite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.action = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.newOuvrageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.chercherOuvrage = new Guna.UI2.WinForms.Guna2TextBox();
+            this.filterOuvrages = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2ContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listOfOuvrage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2ContainerControl1
             // 
+            this.guna2ContainerControl1.AutoScroll = true;
             this.guna2ContainerControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(226)))), ((int)(((byte)(230)))));
-            this.guna2ContainerControl1.Controls.Add(this.tableOuvrage);
+            this.guna2ContainerControl1.Controls.Add(this.label1);
+            this.guna2ContainerControl1.Controls.Add(this.filterOuvrages);
+            this.guna2ContainerControl1.Controls.Add(this.listOfOuvrage);
             this.guna2ContainerControl1.Controls.Add(this.newOuvrageButton);
             this.guna2ContainerControl1.Controls.Add(this.chercherOuvrage);
             this.guna2ContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -56,50 +68,133 @@
             this.guna2ContainerControl1.TabIndex = 6;
             this.guna2ContainerControl1.Text = "guna2ContainerControl1";
             // 
-            // tableOuvrage
+            // listOfOuvrage
             // 
-            this.tableOuvrage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(226)))), ((int)(((byte)(230)))));
-            this.tableOuvrage.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.listOfOuvrage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.listOfOuvrage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listOfOuvrage.BackgroundColor = System.Drawing.Color.White;
+            this.listOfOuvrage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listOfOuvrage.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.listOfOuvrage.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 13F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listOfOuvrage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.listOfOuvrage.ColumnHeadersHeight = 42;
+            this.listOfOuvrage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.nomcomplet,
-            this.cin,
-            this.active,
+            this.auteur,
+            this.titre,
+            this.editeur,
+            this.nom,
+            this.numero,
+            this.periodicite,
+            this.date,
             this.action});
-            this.tableOuvrage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableOuvrage.HideSelection = false;
-            this.tableOuvrage.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
-            this.tableOuvrage.Location = new System.Drawing.Point(0, 81);
-            this.tableOuvrage.Name = "tableOuvrage";
-            this.tableOuvrage.Size = new System.Drawing.Size(1120, 587);
-            this.tableOuvrage.TabIndex = 3;
-            this.tableOuvrage.UseCompatibleStateImageBehavior = false;
-            this.tableOuvrage.View = System.Windows.Forms.View.Details;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listOfOuvrage.DefaultCellStyle = dataGridViewCellStyle3;
+            this.listOfOuvrage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listOfOuvrage.EnableHeadersVisualStyles = false;
+            this.listOfOuvrage.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listOfOuvrage.Location = new System.Drawing.Point(0, 80);
+            this.listOfOuvrage.Name = "listOfOuvrage";
+            this.listOfOuvrage.RowHeadersVisible = false;
+            this.listOfOuvrage.RowHeadersWidth = 51;
+            this.listOfOuvrage.RowTemplate.Height = 50;
+            this.listOfOuvrage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.listOfOuvrage.Size = new System.Drawing.Size(1120, 588);
+            this.listOfOuvrage.TabIndex = 3;
+            this.listOfOuvrage.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.listOfOuvrage.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.listOfOuvrage.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.listOfOuvrage.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.listOfOuvrage.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.listOfOuvrage.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.listOfOuvrage.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listOfOuvrage.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.listOfOuvrage.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.listOfOuvrage.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.listOfOuvrage.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.listOfOuvrage.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.listOfOuvrage.ThemeStyle.HeaderStyle.Height = 42;
+            this.listOfOuvrage.ThemeStyle.ReadOnly = false;
+            this.listOfOuvrage.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.listOfOuvrage.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.listOfOuvrage.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.listOfOuvrage.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.listOfOuvrage.ThemeStyle.RowsStyle.Height = 50;
+            this.listOfOuvrage.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listOfOuvrage.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.listOfOuvrage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listOfOuvrage_CellContentClick);
+            this.listOfOuvrage.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listOfOuvrage_CellMouseDoubleClick);
             // 
             // ID
             // 
-            this.ID.Text = "id";
-            this.ID.Width = 124;
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
             // 
-            // nomcomplet
+            // auteur
             // 
-            this.nomcomplet.Text = "Nom complet";
-            this.nomcomplet.Width = 349;
+            this.auteur.HeaderText = "Auteur";
+            this.auteur.MinimumWidth = 6;
+            this.auteur.Name = "auteur";
             // 
-            // cin
+            // titre
             // 
-            this.cin.Text = "cin";
-            this.cin.Width = 233;
+            this.titre.HeaderText = "Titre";
+            this.titre.MinimumWidth = 6;
+            this.titre.Name = "titre";
             // 
-            // active
+            // editeur
             // 
-            this.active.Text = "active";
-            this.active.Width = 214;
+            this.editeur.HeaderText = "Editeur";
+            this.editeur.MinimumWidth = 6;
+            this.editeur.Name = "editeur";
+            // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nom";
+            this.nom.MinimumWidth = 6;
+            this.nom.Name = "nom";
+            // 
+            // numero
+            // 
+            this.numero.HeaderText = "Numero";
+            this.numero.MinimumWidth = 6;
+            this.numero.Name = "numero";
+            // 
+            // periodicite
+            // 
+            this.periodicite.HeaderText = "Periodicite";
+            this.periodicite.MinimumWidth = 6;
+            this.periodicite.Name = "periodicite";
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
             // 
             // action
             // 
-            this.action.Text = "action";
-            this.action.Width = 171;
+            this.action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.action.HeaderText = "Action";
+            this.action.MinimumWidth = 6;
+            this.action.Name = "action";
+            this.action.Width = 111;
             // 
             // newOuvrageButton
             // 
@@ -116,7 +211,7 @@
             this.newOuvrageButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.newOuvrageButton.ForeColor = System.Drawing.Color.White;
             this.newOuvrageButton.HoverState.Parent = this.newOuvrageButton;
-            this.newOuvrageButton.Location = new System.Drawing.Point(883, 17);
+            this.newOuvrageButton.Location = new System.Drawing.Point(770, 17);
             this.newOuvrageButton.Name = "newOuvrageButton";
             this.newOuvrageButton.ShadowDecoration.Parent = this.newOuvrageButton;
             this.newOuvrageButton.Size = new System.Drawing.Size(199, 44);
@@ -141,14 +236,48 @@
             this.chercherOuvrage.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chercherOuvrage.HoverState.Parent = this.chercherOuvrage;
             this.chercherOuvrage.IconRight = ((System.Drawing.Image)(resources.GetObject("chercherOuvrage.IconRight")));
-            this.chercherOuvrage.Location = new System.Drawing.Point(8, 17);
+            this.chercherOuvrage.Location = new System.Drawing.Point(3, 17);
             this.chercherOuvrage.Name = "chercherOuvrage";
             this.chercherOuvrage.PasswordChar = '\0';
             this.chercherOuvrage.PlaceholderText = "";
             this.chercherOuvrage.SelectedText = "";
+            this.chercherOuvrage.SelectionStart = 18;
             this.chercherOuvrage.ShadowDecoration.Parent = this.chercherOuvrage;
             this.chercherOuvrage.Size = new System.Drawing.Size(335, 44);
             this.chercherOuvrage.TabIndex = 1;
+            this.chercherOuvrage.TextChanged += new System.EventHandler(this.chercherOuvrage_TextChanged);
+            // 
+            // filterOuvrages
+            // 
+            this.filterOuvrages.BackColor = System.Drawing.Color.Transparent;
+            this.filterOuvrages.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(35)))), ((int)(((byte)(255)))));
+            this.filterOuvrages.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.filterOuvrages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.filterOuvrages.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
+            this.filterOuvrages.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.filterOuvrages.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.filterOuvrages.FocusedState.Parent = this.filterOuvrages;
+            this.filterOuvrages.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.filterOuvrages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.filterOuvrages.HoverState.Parent = this.filterOuvrages;
+            this.filterOuvrages.ItemHeight = 30;
+            this.filterOuvrages.ItemsAppearance.Parent = this.filterOuvrages;
+            this.filterOuvrages.Location = new System.Drawing.Point(993, 25);
+            this.filterOuvrages.Name = "filterOuvrages";
+            this.filterOuvrages.ShadowDecoration.Parent = this.filterOuvrages;
+            this.filterOuvrages.Size = new System.Drawing.Size(124, 36);
+            this.filterOuvrages.TabIndex = 13;
+            this.filterOuvrages.SelectedIndexChanged += new System.EventHandler(this.filterOuvrages_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(356, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Ouvrage
             // 
@@ -159,6 +288,8 @@
             this.Name = "Ouvrage";
             this.Size = new System.Drawing.Size(1120, 668);
             this.guna2ContainerControl1.ResumeLayout(false);
+            this.guna2ContainerControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listOfOuvrage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -166,13 +297,19 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
-        private System.Windows.Forms.ListView tableOuvrage;
-        private System.Windows.Forms.ColumnHeader ID;
-        private System.Windows.Forms.ColumnHeader nomcomplet;
-        private System.Windows.Forms.ColumnHeader cin;
-        private System.Windows.Forms.ColumnHeader active;
-        private System.Windows.Forms.ColumnHeader action;
         private Guna.UI2.WinForms.Guna2GradientButton newOuvrageButton;
         private Guna.UI2.WinForms.Guna2TextBox chercherOuvrage;
+        private Guna.UI2.WinForms.Guna2DataGridView listOfOuvrage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn auteur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn editeur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodicite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn action;
+        private Guna.UI2.WinForms.Guna2ComboBox filterOuvrages;
+        private System.Windows.Forms.Label label1;
     }
 }

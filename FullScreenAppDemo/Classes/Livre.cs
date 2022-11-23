@@ -12,13 +12,37 @@ namespace FullScreenAppDemo.Classes
 
         public Livre(string auteur, string titre, string editeur, string date) : base(date)
         {
-            this.Auteur = auteur;
-            this.Titre = titre;
-            this.Editeur = editeur;
+            this.auteur = auteur;
+            this.titre = titre;
+            this.editeur = editeur;
         }
 
-        public string Auteur { get => auteur; set => auteur = value; }
-        public string Titre { get => titre; set => titre = value; }
-        public string Editeur { get => editeur; set => editeur = value; }
+        public string getEditeur()
+        {
+            return this.editeur;
+        }
+
+        public string setEditeur(string ed)
+        {
+            return this.editeur = ed;
+        }
+
+        public string getAuteur()
+        {
+            return this.auteur;
+        }
+        public string getTitre()
+        {
+            return this.titre;
+        }
+        public void setAuteur(string auteur)
+        {
+            this.auteur = auteur;
+        }
+
+        public void setTitre(string titre)
+        {
+            this.titre = titre;
+        }
     }
 }

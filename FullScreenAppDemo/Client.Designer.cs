@@ -198,6 +198,7 @@
             this.guna2GradientButton2.Size = new System.Drawing.Size(199, 44);
             this.guna2GradientButton2.TabIndex = 11;
             this.guna2GradientButton2.Text = "Annuler";
+            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
             // Client
             // 
@@ -208,6 +209,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Client";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

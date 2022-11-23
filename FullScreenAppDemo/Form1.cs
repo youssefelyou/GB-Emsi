@@ -59,13 +59,17 @@ namespace FullScreenAppDemo
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            this.guna2Button1.BackColor = Color.AliceBlue;
+            this.guna2Button1.FillColor = Color.FromArgb(0,180,216);
+            this.guna2Button2.FillColor = Color.FromArgb(249, 249, 249);
+            this.guna2Button3.FillColor = Color.FromArgb(249, 249, 249);
+            this.guna2Button4.FillColor = Color.FromArgb(249, 249, 249);
             this.dashboard1.Show();
             this.clientList1.Hide();
+            this.ouvrage1.Hide();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.guna2Button1.BackColor = Color.AliceBlue;
+            this.guna2Button1.FillColor = Color.FromArgb(0, 180, 216);
             this.dashboard1.Show();
             this.clientList1.Hide();
             this.ouvrage1.Hide();
@@ -73,7 +77,10 @@ namespace FullScreenAppDemo
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            this.guna2Button3.BackColor = Color.LightSkyBlue;
+            this.guna2Button1.FillColor = Color.FromArgb(249, 249, 249);
+            this.guna2Button2.FillColor = Color.FromArgb(249, 249, 249);
+            this.guna2Button3.FillColor = Color.FromArgb(0, 180, 216);
+            this.guna2Button4.FillColor = Color.FromArgb(249, 249, 249);
             this.dashboard1.Hide();
             this.clientList1.Hide();
             this.ouvrage1.Show();
@@ -97,10 +104,13 @@ namespace FullScreenAppDemo
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            this.guna2Button1.BackColor = Color.White;
-            this.guna2Button2.BackColor = Color.AliceBlue;
+            this.guna2Button1.FillColor = Color.FromArgb(249, 249, 249);
+            this.guna2Button2.FillColor = Color.FromArgb(0, 180, 216);
+            this.guna2Button3.FillColor = Color.FromArgb(249, 249, 249);
+            this.guna2Button4.FillColor = Color.FromArgb(249, 249, 249);
             this.dashboard1.Hide();
             this.clientList1.Show();
+            this.ouvrage1.Hide();
         }
 
 
@@ -110,6 +120,21 @@ namespace FullScreenAppDemo
 
         }
 
-      
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            this.guna2Button1.FillColor = Color.FromArgb(249, 249, 249);
+            this.guna2Button2.FillColor = Color.FromArgb(249, 249, 249);
+            this.guna2Button3.FillColor = Color.FromArgb(249, 249, 249);
+            this.guna2Button4.FillColor = Color.FromArgb(0, 180, 216);
+            this.dashboard1.Hide();
+            this.clientList1.Hide();
+            this.ouvrage1.Hide();
+
+        }
+
+        private void guna2Button1_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

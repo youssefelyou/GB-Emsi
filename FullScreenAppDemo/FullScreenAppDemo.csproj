@@ -192,6 +192,7 @@
   <ItemGroup>
     <Compile Include="Classes\Cd.cs" />
     <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\Connexion.cs" />
     <Compile Include="Classes\Emprunt.cs" />
     <Compile Include="Classes\Livre.cs" />
     <Compile Include="Classes\Ouvrage.cs" />
@@ -207,6 +208,12 @@
     </Compile>
     <Compile Include="ClientList.Designer.cs">
       <DependentUpon>ClientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateOuvrage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateOuvrage.Designer.cs">
+      <DependentUpon>CreateOuvrage.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>UserControl</SubType>
@@ -239,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientList.resx">
       <DependentUpon>ClientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateOuvrage.resx">
+      <DependentUpon>CreateOuvrage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

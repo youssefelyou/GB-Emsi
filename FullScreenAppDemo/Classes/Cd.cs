@@ -16,7 +16,24 @@ namespace FullScreenAppDemo.Classes
             this.titre = titre;
         }
 
-        public string Auteur { get => auteur; set => auteur = value; }
-        public string Titre { get => titre; set => titre = value; }
+        public string getAuteur()
+        {
+            return this.auteur;
+        }
+        public string getTitre()
+        {
+            return this.titre;
+        }
+        public void setAuteur(string auteur)
+        {
+            this.auteur = auteur;
+        }
+        
+        public void setTitre(string titre)
+        {
+            this.titre = titre;
+        }
+       
+
     }
 }
