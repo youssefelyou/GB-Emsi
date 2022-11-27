@@ -33,20 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ouvrage));
             this.guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.filterOuvrages = new Guna.UI2.WinForms.Guna2ComboBox();
             this.listOfOuvrage = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.auteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editeur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.periodicite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.action = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.newOuvrageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.chercherOuvrage = new Guna.UI2.WinForms.Guna2TextBox();
-            this.filterOuvrages = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2ContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listOfOuvrage)).BeginInit();
             this.SuspendLayout();
@@ -68,8 +59,44 @@
             this.guna2ContainerControl1.TabIndex = 6;
             this.guna2ContainerControl1.Text = "guna2ContainerControl1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(399, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // filterOuvrages
+            // 
+            this.filterOuvrages.BackColor = System.Drawing.Color.Transparent;
+            this.filterOuvrages.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(35)))), ((int)(((byte)(255)))));
+            this.filterOuvrages.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.filterOuvrages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.filterOuvrages.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
+            this.filterOuvrages.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.filterOuvrages.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.filterOuvrages.FocusedState.Parent = this.filterOuvrages;
+            this.filterOuvrages.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.filterOuvrages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.filterOuvrages.HoverState.Parent = this.filterOuvrages;
+            this.filterOuvrages.ItemHeight = 30;
+            this.filterOuvrages.ItemsAppearance.Parent = this.filterOuvrages;
+            this.filterOuvrages.Location = new System.Drawing.Point(993, 25);
+            this.filterOuvrages.Name = "filterOuvrages";
+            this.filterOuvrages.ShadowDecoration.Parent = this.filterOuvrages;
+            this.filterOuvrages.Size = new System.Drawing.Size(124, 36);
+            this.filterOuvrages.TabIndex = 13;
+            this.filterOuvrages.SelectedIndexChanged += new System.EventHandler(this.filterOuvrages_SelectedIndexChanged);
+            // 
             // listOfOuvrage
             // 
+            this.listOfOuvrage.AllowUserToAddRows = false;
+            this.listOfOuvrage.AllowUserToDeleteRows = false;
+            this.listOfOuvrage.AllowUserToResizeColumns = false;
+            this.listOfOuvrage.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.listOfOuvrage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.listOfOuvrage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -87,16 +114,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.listOfOuvrage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.listOfOuvrage.ColumnHeadersHeight = 42;
-            this.listOfOuvrage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.auteur,
-            this.titre,
-            this.editeur,
-            this.nom,
-            this.numero,
-            this.periodicite,
-            this.date,
-            this.action});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F);
@@ -138,63 +155,8 @@
             this.listOfOuvrage.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.listOfOuvrage.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.listOfOuvrage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listOfOuvrage_CellContentClick);
+            this.listOfOuvrage.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listOfOuvrage_CellMouseClick);
             this.listOfOuvrage.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listOfOuvrage_CellMouseDoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            // 
-            // auteur
-            // 
-            this.auteur.HeaderText = "Auteur";
-            this.auteur.MinimumWidth = 6;
-            this.auteur.Name = "auteur";
-            // 
-            // titre
-            // 
-            this.titre.HeaderText = "Titre";
-            this.titre.MinimumWidth = 6;
-            this.titre.Name = "titre";
-            // 
-            // editeur
-            // 
-            this.editeur.HeaderText = "Editeur";
-            this.editeur.MinimumWidth = 6;
-            this.editeur.Name = "editeur";
-            // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nom";
-            this.nom.MinimumWidth = 6;
-            this.nom.Name = "nom";
-            // 
-            // numero
-            // 
-            this.numero.HeaderText = "Numero";
-            this.numero.MinimumWidth = 6;
-            this.numero.Name = "numero";
-            // 
-            // periodicite
-            // 
-            this.periodicite.HeaderText = "Periodicite";
-            this.periodicite.MinimumWidth = 6;
-            this.periodicite.Name = "periodicite";
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            // 
-            // action
-            // 
-            this.action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.action.HeaderText = "Action";
-            this.action.MinimumWidth = 6;
-            this.action.Name = "action";
-            this.action.Width = 111;
             // 
             // newOuvrageButton
             // 
@@ -247,38 +209,6 @@
             this.chercherOuvrage.TabIndex = 1;
             this.chercherOuvrage.TextChanged += new System.EventHandler(this.chercherOuvrage_TextChanged);
             // 
-            // filterOuvrages
-            // 
-            this.filterOuvrages.BackColor = System.Drawing.Color.Transparent;
-            this.filterOuvrages.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(35)))), ((int)(((byte)(255)))));
-            this.filterOuvrages.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.filterOuvrages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.filterOuvrages.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
-            this.filterOuvrages.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.filterOuvrages.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.filterOuvrages.FocusedState.Parent = this.filterOuvrages;
-            this.filterOuvrages.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.filterOuvrages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.filterOuvrages.HoverState.Parent = this.filterOuvrages;
-            this.filterOuvrages.ItemHeight = 30;
-            this.filterOuvrages.ItemsAppearance.Parent = this.filterOuvrages;
-            this.filterOuvrages.Location = new System.Drawing.Point(993, 25);
-            this.filterOuvrages.Name = "filterOuvrages";
-            this.filterOuvrages.ShadowDecoration.Parent = this.filterOuvrages;
-            this.filterOuvrages.Size = new System.Drawing.Size(124, 36);
-            this.filterOuvrages.TabIndex = 13;
-            this.filterOuvrages.SelectedIndexChanged += new System.EventHandler(this.filterOuvrages_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(356, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // Ouvrage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -300,15 +230,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton newOuvrageButton;
         private Guna.UI2.WinForms.Guna2TextBox chercherOuvrage;
         private Guna.UI2.WinForms.Guna2DataGridView listOfOuvrage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn auteur;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn editeur;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn periodicite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn action;
         private Guna.UI2.WinForms.Guna2ComboBox filterOuvrages;
         private System.Windows.Forms.Label label1;
     }

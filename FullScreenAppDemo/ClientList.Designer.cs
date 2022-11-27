@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("1");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientList));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.nomcomplet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.active = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.action = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.listOfClient = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2ContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listOfClient)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientButton1
@@ -63,56 +61,12 @@
             this.guna2GradientButton1.Size = new System.Drawing.Size(199, 44);
             this.guna2GradientButton1.TabIndex = 2;
             this.guna2GradientButton1.Text = "Nouveau client";
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(226)))), ((int)(((byte)(230)))));
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ID,
-            this.nomcomplet,
-            this.cin,
-            this.active,
-            this.action});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView1.HideSelection = false;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.listView1.Location = new System.Drawing.Point(0, 85);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1095, 626);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // ID
-            // 
-            this.ID.Text = "id";
-            this.ID.Width = 124;
-            // 
-            // nomcomplet
-            // 
-            this.nomcomplet.Text = "Nom complet";
-            this.nomcomplet.Width = 349;
-            // 
-            // cin
-            // 
-            this.cin.Text = "cin";
-            this.cin.Width = 233;
-            // 
-            // active
-            // 
-            this.active.Text = "active";
-            this.active.Width = 214;
-            // 
-            // action
-            // 
-            this.action.Text = "action";
-            this.action.Width = 171;
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // guna2ContainerControl1
             // 
             this.guna2ContainerControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(226)))), ((int)(((byte)(230)))));
-            this.guna2ContainerControl1.Controls.Add(this.listView1);
+            this.guna2ContainerControl1.Controls.Add(this.listOfClient);
             this.guna2ContainerControl1.Controls.Add(this.guna2GradientButton1);
             this.guna2ContainerControl1.Controls.Add(this.guna2TextBox1);
             this.guna2ContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -150,6 +104,66 @@
             this.guna2TextBox1.Size = new System.Drawing.Size(335, 44);
             this.guna2TextBox1.TabIndex = 1;
             // 
+            // listOfClient
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.listOfClient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.listOfClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listOfClient.BackgroundColor = System.Drawing.Color.White;
+            this.listOfClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listOfClient.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.listOfClient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 13F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listOfClient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.listOfClient.ColumnHeadersHeight = 42;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listOfClient.DefaultCellStyle = dataGridViewCellStyle3;
+            this.listOfClient.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listOfClient.EnableHeadersVisualStyles = false;
+            this.listOfClient.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listOfClient.Location = new System.Drawing.Point(0, 123);
+            this.listOfClient.Name = "listOfClient";
+            this.listOfClient.RowHeadersVisible = false;
+            this.listOfClient.RowHeadersWidth = 51;
+            this.listOfClient.RowTemplate.Height = 50;
+            this.listOfClient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.listOfClient.Size = new System.Drawing.Size(1095, 588);
+            this.listOfClient.TabIndex = 4;
+            this.listOfClient.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.listOfClient.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.listOfClient.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.listOfClient.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.listOfClient.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.listOfClient.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.listOfClient.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listOfClient.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.listOfClient.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.listOfClient.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.listOfClient.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.listOfClient.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.listOfClient.ThemeStyle.HeaderStyle.Height = 42;
+            this.listOfClient.ThemeStyle.ReadOnly = false;
+            this.listOfClient.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.listOfClient.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.listOfClient.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.listOfClient.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.listOfClient.ThemeStyle.RowsStyle.Height = 50;
+            this.listOfClient.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listOfClient.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
             // ClientList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,6 +172,7 @@
             this.Name = "ClientList";
             this.Size = new System.Drawing.Size(1095, 711);
             this.guna2ContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.listOfClient)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -166,12 +181,7 @@
 
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader ID;
-        private System.Windows.Forms.ColumnHeader nomcomplet;
-        private System.Windows.Forms.ColumnHeader cin;
-        private System.Windows.Forms.ColumnHeader active;
-        private System.Windows.Forms.ColumnHeader action;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
+        private Guna.UI2.WinForms.Guna2DataGridView listOfClient;
     }
 }

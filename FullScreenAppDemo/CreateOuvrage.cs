@@ -17,8 +17,14 @@ namespace FullScreenAppDemo
 {
     public partial class CreateOuvrage : Form
     {
+        
         MySqlConnection connexion = new MySqlConnection($"datasource=localhost;port=3306;username=root;password=root;database=twengo");
 
+        public Cd cd;
+        public Periodique per;
+        public FullScreenAppDemo.Classes.Client client;
+        public FullScreenAppDemo.Classes.Ouvrage ouvrageClass;
+        public FullScreenAppDemo.Classes.Livre livre;
 
         public CreateOuvrage()
         {
@@ -38,12 +44,31 @@ namespace FullScreenAppDemo
             this.numero.Text = null;
             this.periodicite.Text = null;
 
-            this.auteur.Hide();
-            this.titre.Hide();
-            this.editeur.Hide();
-            this.nom.Hide();
-            this.numero.Hide();
-            this.periodicite.Hide();
+            if (cd != null)
+            {
+                this.auteur.Show();
+                this.titre.Show();
+                typeOuvrages.SelectedValue = "CD";
+            } else if(livre != null)
+            {
+                this.auteur.Show();
+                this.titre.Show();
+                this.editeur.Show();
+            } else if(per != null)
+            {
+                this.nom.Show();
+                this.numero.Show();
+                this.periodicite.Show();
+            } else
+            {
+                this.auteur.Hide();
+                this.titre.Hide();
+                this.editeur.Hide();
+                this.nom.Hide();
+                this.numero.Hide();
+                this.periodicite.Hide();
+            }
+
         }
 
        

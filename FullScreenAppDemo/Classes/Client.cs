@@ -9,16 +9,18 @@ namespace FullScreenAppDemo.Classes
     internal class Client
     {
         private int id;
+        private static int count =3;
         private string fullname;
         private string cin;
-        private bool active;
+        private bool active = true;
 
         public Client(string fullname, string cin, bool active)
         {
-           
+            this.id = count;
             this.Fullname = fullname;
             this.Cin = cin;
             this.Active = active;
+            count++;
         }
 
         public int Id { get => id; set => id = value; }

@@ -17,7 +17,11 @@ namespace FullScreenAppDemo
     {
         DataTable dataTable = new DataTable();
         MySqlConnection connexion = new MySqlConnection($"datasource=localhost;port=3306;username=root;password=root;database=twengo");
-
+        Cd cd;
+        Periodique per;
+        FullScreenAppDemo.Classes.Client client;
+        FullScreenAppDemo.Classes.Ouvrage ouvrageClass;
+        FullScreenAppDemo.Classes.Livre livre;
 
         public Ouvrage()
         {
@@ -32,60 +36,37 @@ namespace FullScreenAppDemo
 
         public void getListOfOuvrages()
         {
-            if(connexion.State != ConnectionState.Open)connexion.Open();
+            dataTable = new DataTable();
+            if (connexion.State != ConnectionState.Open)connexion.Open();
             string request = "SELECT id, auteur, titre, editeur, nom, numero, periodicite, date FROM ouvrage";
             MySqlCommand cmd = new MySqlCommand(request, connexion);
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             da.Fill(dataTable);
-            List<string> myArray;
-            listOfOuvrage.DataSource = null;
-            listOfOuvrage.Rows.Clear();
-            foreach (DataRow dataRow in dataTable.Rows)
-            {
-                myArray = new List<string>();
-                foreach (var item in dataRow.ItemArray)
-                {
-                    myArray.Add(item.ToString());
-                }
-                listOfOuvrage.Rows.Add(myArray[0], myArray[1], myArray[2], myArray[3], myArray[4], myArray[5], myArray[6], myArray[7]);
-            }
+            listOfOuvrage.DataSource = dataTable;
         }
 
         private void findByTypeOf(string type)
         {
             if (connexion.State != ConnectionState.Open) connexion.Open();
-            listOfOuvrage.DataSource = null;
-            listOfOuvrage.Rows.Clear();
-            listOfOuvrage.Refresh();
+            dataTable = new DataTable();
             string request;
             if (type == "CD")
             {
-                 request = "SELECT id, auteur, titre, editeur, nom, numero, periodicite, date FROM ouvrage WHERE detype='CD'";
+                 request = "SELECT id, auteur, titre, date FROM ouvrage WHERE detype='CD'";
 
             } else if(type == "LIVRE")
             {
-                request = "SELECT id, auteur, titre, editeur, nom, numero, periodicite, date FROM ouvrage WHERE detype='LIVRE'";
+                request = "SELECT id, auteur, titre, editeur, date FROM ouvrage WHERE detype='LIVRE'";
 
             } else
             {
-                request = "SELECT id, auteur, titre, editeur, nom, numero, periodicite, date FROM ouvrage WHERE detype='PERIODIQUE'";
+                request = "SELECT id, numero, periodicite, date FROM ouvrage WHERE detype='PERIODIQUE'";
             }
 
             MySqlCommand cmd = new MySqlCommand(request, connexion);
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             da.Fill(dataTable);
-            List<string> myArray;
-         
-            foreach (DataRow dataRow in dataTable.Rows)
-            {
-                myArray = new List<string>();
-                foreach (var item in dataRow.ItemArray)
-                {
-                    myArray.Add(item.ToString());
-                }
-                listOfOuvrage.Rows.Add(myArray[0], myArray[1], myArray[2], myArray[3], myArray[4], myArray[5], myArray[6], myArray[7]);
-            }
-
+            listOfOuvrage.DataSource = dataTable;
         }
 
 
@@ -123,40 +104,51 @@ namespace FullScreenAppDemo
 
         private void listOfOuvrage_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+
+        }
+
+        private void listOfOuvrage_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
             DataGridViewRow row = this.listOfOuvrage.Rows[e.RowIndex];
             string id = row.Cells[0].Value.ToString();
+            
 
             if (connexion.State != ConnectionState.Open)
             {
                 connexion.Open();
             }
             MySqlCommand cmd = connexion.CreateCommand();
-            cmd.CommandText = "SELECT detype, id, auteur, titre, editeur, nom, numero, periodicite, date FROM ouvrage WHERE id=" + id;
+            cmd.CommandText = "SELECT id, auteur, titre, editeur, nom, numero, periodicite, date, detype FROM ouvrage WHERE id=" + id;
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dataTable);
-            
             List<string> myArray = new List<string>();
             foreach (DataRow dataRow in dataTable.Rows)
             {
+                CreateOuvrage createOuvrage = new CreateOuvrage();
                 foreach (var item in dataRow.ItemArray)
                 {
                     myArray.Add(item.ToString());
                 }
-                listOfOuvrage.Rows.Add(myArray[0], myArray[1], myArray[2], myArray[3], myArray[4], myArray[5], myArray[6], myArray[7], myArray[8]);
 
+                label1.Text = myArray[8];
 
-                if (myArray[7] == "CD")
+                if (myArray[8] == "CD")
                 {
-                    label1.Text = myArray[8];
+                    cd = new Cd(myArray[1], myArray[2], myArray[7]);
+                    createOuvrage.cd = cd;
+                    createOuvrage.FormClosing += new FormClosingEventHandler(this.CreateOuvrage_FormClosing);
+                    createOuvrage.ShowDialog();
 
-                } else if(myArray[7] == "LIVRE")
+                }
+                else if (myArray[8] == "LIVRE")
                 {
-                    label1.Text = myArray[8];
-                } else
+
+                }
+                else
                 {
-                    label1.Text = myArray[8];
+
                 }
             }
+
         }
     }
 }
